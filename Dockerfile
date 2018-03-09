@@ -29,7 +29,7 @@ RUN chmod +x -R /usr/share/jenkins/ref/adop_scripts/ && chmod +x /entrypoint.sh
 RUN echo "    KexAlgorithms diffie-hellman-group1-sha1,diffie-hellman-group-exchange-sha256" >> /etc/ssh/ssh_config
 
 # Pre-requisites
-RUN apt-get update && apt-get install -y zip ldap-utils python-pip \
+RUN apt-get update && apt-get install -y zip ldap-utils python-pip expect \
     file && \
     rm -rf /var/lib/apt/lists/*
 
