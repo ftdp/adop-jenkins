@@ -20,6 +20,9 @@ sed -i "s,###SCM_PROVIDER_PROPERTIES_PATH###,$PLUGGABLE_SCM_PROVIDER_PROPERTIES_
 echo "skip upgrade wizard step after installation"
 echo "2.73.3" > /var/jenkins_home/jenkins.install.UpgradeWizard.state
 
+# Setting net.ipv4.tcp_keepalive_time=180
+echo 180 > /write-proc/sys/net/ipv4/tcp_keepalive_time
+
 echo "start JENKINS"
 
 # Temporary measure, if this folder is big, it holds the container -> holds nginx -> holds whole platform
