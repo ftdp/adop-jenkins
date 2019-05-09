@@ -1,4 +1,4 @@
-FROM jenkinsci/jenkins:2.73.3
+FROM jenkins/jenkins:2.107.3
 
 MAINTAINER Nick Griffin, <nicholas.griffin>
 
@@ -34,7 +34,7 @@ RUN apt-get update && apt-get install -y zip ldap-utils python-pip telnet netcat
 # Environment variables
 ENV ADOP_LDAP_ENABLED=true ADOP_ACL_ENABLED=true ADOP_SONAR_ENABLED=true ADOP_ANT_ENABLED=true ADOP_MAVEN_ENABLED=true ADOP_NODEJS_ENABLED=true ADOP_GERRIT_ENABLED=true
 ENV LDAP_GROUP_NAME_ADMIN=""
-ENV JENKINS_OPTS="--prefix=/jenkins -Djenkins.install.runSetupWizard=false"
+ENV JENKINS_OPTS="--prefix=/jenkins-new -Djenkins.install.runSetupWizard=false"
 ENV PLUGGABLE_SCM_PROVIDER_PROPERTIES_PATH="/var/jenkins_home/userContent/datastore/pluggable/scm"
 ENV PLUGGABLE_SCM_PROVIDER_PATH="/var/jenkins_home/userContent/job_dsl_additional_classpath/"
 
